@@ -1,4 +1,5 @@
 supplier-data.tar.gz
 *.tiff
 *.JPEG
+*.pyc
 LICENSE
