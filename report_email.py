@@ -47,5 +47,4 @@ if __name__ == "__main__":
     subject="Upload Completed - Online Fruit Store"
     body="All fruits are uploaded to our website successfully. A detailed list is attached to this email."
     msg = emails.generate(from_user,username,subject,body,"/tmp/processed.pdf")
-
     emails.send(msg)
