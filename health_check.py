@@ -5,6 +5,7 @@ import psutil
 import socket
 import os
 import emails
+import sys
 
 def alert_needed(stats):
     # send alert if any of the alerts are over the threshold
@@ -46,6 +47,11 @@ if __name__ == "__main__":
         subject_line = details[0]
         from_user="automation@example.com"
         username="!!TBC!!@example.com"
+
+        if username == "!!TBC!!@example.com":
+            print("got to change email recipient")
+            sys.exit(1)
+
         body="Please check your system and resolve the issue as soon as possible."
         msg = emails.generate(from_user,username,subject_line,body)
         #print(msg)

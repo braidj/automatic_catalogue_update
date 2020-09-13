@@ -2,6 +2,7 @@
 import requests
 import os
 import json
+import sys
 
 
 def post_json_file(source):
@@ -9,7 +10,12 @@ def post_json_file(source):
     txt_name = os.path.basename(source)[:7]
     image_name=txt_name.replace('.txt','.jpeg')
     json_name = txt_name.replace('.txt','.json')
-    url = "http://localhost/upload/" # change to the correct place
+    url = "http://[linux-instance-external-IP]/fruits" # change to the correct place
+
+    if url == "http://[linux-instance-external-IP]/fruits":
+        print("got to change the URL dumbo")
+        sys.exit(1)
+        
 
     print(f"\nGoing to post {json_name} {url}")
 

@@ -3,10 +3,16 @@ import reports
 import emails
 import os
 from datetime import date
+import sys
 
 def generate_report_detail():
 
     DESC_DIR = '/home/braid/development/automatic_catalogue_update/supplier-data/descriptions'
+
+    if DESC_DIR == '/home/braid/development/automatic_catalogue_update/supplier-data/descriptions':
+        print("got to descriptions dir")
+        sys.exit(1)
+
     desc_files = [x for x in os.listdir(DESC_DIR) if 'txt' in x] # only want .txt
     nl = "<br/>"
 
@@ -44,6 +50,11 @@ if __name__ == "__main__":
 
     from_user="automation@example.com"
     username="!!TBC!!@example.com"
+
+    if username == "!!TBC!!@example.com":
+        print("got to change email recipient")
+        sys.exit(1)
+
     subject="Upload Completed - Online Fruit Store"
     body="All fruits are uploaded to our website successfully. A detailed list is attached to this email."
     msg = emails.generate(from_user,username,subject,body,"/tmp/processed.pdf")
