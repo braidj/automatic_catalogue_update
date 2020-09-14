@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     for img in images:
         source = r"{}/{}".format(IMAGES_DIR, img)
-        tgt_name = "{}.JPEG".format(source[:-5])
+        tgt_name = "{}.jpeg".format(source[:-5])
 
         try:
             current = Image.open(source)
@@ -24,6 +24,6 @@ if __name__ == "__main__":
             new_image.save(tgt_name)
            # print(f"Converted {tgt_name}")
         except Exception as e:
-            print(f"Error: %s" % str(e))
+            print("Error: %s" % str(e))
 
     print("Done")

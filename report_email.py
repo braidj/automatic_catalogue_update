@@ -7,11 +7,7 @@ import sys
 
 def generate_report_detail():
 
-    DESC_DIR = '/home/braid/development/automatic_catalogue_update/supplier-data/descriptions'
-
-    if DESC_DIR == '/home/braid/development/automatic_catalogue_update/supplier-data/descriptions':
-        print("got to descriptions dir")
-        sys.exit(1)
+    DESC_DIR = '/home/student-00-dd910962cda2/supplier-data/descriptions'
 
     desc_files = [x for x in os.listdir(DESC_DIR) if 'txt' in x] # only want .txt
     nl = "<br/>"
@@ -20,7 +16,7 @@ def generate_report_detail():
     formatted=[]
 
     for f in desc_files:
-        current_file=f"{DESC_DIR}/{f}"
+        current_file="{}/{}".format(DESC_DIR,f)
         with open(current_file,'r') as desc_details:
 
             raw_lines = desc_details.readlines()
@@ -31,10 +27,10 @@ def generate_report_detail():
 
         results[fruit]=weight
 
-    #print(results)
+    print(results)
     for key in sorted(results.keys()) :# sort the dictionary on key
-        #print(f"name:{key}{nl}weight:{results[key]}{nl}")
-        formatted.append(f"name: {key}{nl}weight: {results[key]}{nl}")
+        value = "name: {}{}weight: {}{}").format(key,nl,results[key],nl)
+        formatted.append(value)
 
     #print(formatted)
     return nl.join(formatted)
@@ -44,16 +40,12 @@ if __name__ == "__main__":
     detail = generate_report_detail()
     today = date.today()
     format_today = today.strftime("%B %d, %Y")
-    title = f"Processed update on {format_today}"
+    title = "Processed update on {}".format(format_today)
 
     reports.generate_report("/tmp/processed.pdf",title,detail)
 
     from_user="automation@example.com"
-    username="!!TBC!!@example.com"
-
-    if username == "!!TBC!!@example.com":
-        print("got to change email recipient")
-        sys.exit(1)
+    username="student-00-dd910962cda2@example.com"
 
     subject="Upload Completed - Online Fruit Store"
     body="All fruits are uploaded to our website successfully. A detailed list is attached to this email."

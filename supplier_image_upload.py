@@ -11,7 +11,7 @@ import os
 
 if __name__ == "__main__":
 
-    IMAGES_DIR = '/home/student-01-4e29e87122e6/supplier-data/images'
+    IMAGES_DIR = '/home/student-00-dd910962cda2/supplier-data/images'
 
     images = [x for x in os.listdir(IMAGES_DIR) if 'jpeg' in x] # only want .tiff
 
@@ -23,3 +23,5 @@ if __name__ == "__main__":
         
         with open(source, 'rb') as opened:
             r = requests.post(url, files={'file': opened})
+
+    print("Done")

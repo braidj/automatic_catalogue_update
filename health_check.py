@@ -46,16 +46,12 @@ if __name__ == "__main__":
     if prob_detected:
         subject_line = details[0]
         from_user="automation@example.com"
-        username="!!TBC!!@example.com"
-
-        if username == "!!TBC!!@example.com":
-            print("got to change email recipient")
-            sys.exit(1)
+        username="student-00-dd910962cda2@example.com"
 
         body="Please check your system and resolve the issue as soon as possible."
         msg = emails.generate(from_user,username,subject_line,body)
         #print(msg)
         emails.send(msg)
 
-    for key in performance:
-        print(f"{key}: {performance[key]}")
+    #for key in performance:
+        #print(f"{key}: {performance[key]}")
